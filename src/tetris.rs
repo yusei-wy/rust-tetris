@@ -28,8 +28,8 @@ const BLOCKS: &'static [&'static [(i32, i32)]] = &[
 // 操作するブロックとブロックを配置するフィールドを状態として持つ
 #[derive(Debug)]
 pub struct Tetris {
-    block: Block,
-    field: [[Color; 10]; 20],
+    pub block: Block,
+    pub field: [[Color; 10]; 20],
 }
 
 impl Tetris {
@@ -106,13 +106,13 @@ impl Tetris {
 
 // ひとかたまり同じ色として扱う
 #[derive(Debug)]
-struct Block {
-    color: Color,
-    blocks: Vec<(i32, i32)>,
+pub struct Block {
+    pub color: Color,
+    pub blocks: Vec<(i32, i32)>,
 }
 
 #[derive(Debug, PartialEq, Copy, Clone)]
-enum Color {
+pub enum Color {
     Black,
     Red,
     Green,
